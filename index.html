@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=2">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1348.17">
+  <style type="text/css">
+
+  .done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+#members{
+  text-decoration: bold;
+  font-family: arial;
+  font-size: 20;
+      }
+#tittle{
+  text-decoration: bold;
+  font-family: arial;
+  font-size: 20;
+}
+
+#member{
+  
+  float: left;
+  border-style: solid;
+  border-width: 1px;
+  width: 100%; 
+  text-align: center;
+  color: white;
+  text-decoration: bold;
+  font-family: arial;
+  font-size: 50;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  
+}
+
+
+#container {
+  width: 284px;
+  overflow: auto;
+  border-style: solid;
+  border-width: 1px;
+  margin : 10px;
+  background-color: red;
+
+}
+
+.button {
+     
+    /*Step 2: Basic Button Styles*/
+    display: block;
+    height: 100px;
+    width: 300px;
+    background: #34696f;
+    border: 2px solid rgba(33, 68, 72, 0.59);
+     
+    /*Step 3: Text Styles*/
+    color: white;
+    text-align: center;
+    margin-left: 3px;
+    font: bold 3.2em/100px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+ 
+/*Step 3: Link Styling*/
+a.button {
+    text-decoration: none;
+}
+
+
+  </style>
+  <script type="text/javascript">
+
+  		
+      function contains(a, obj) {
+        for (var i = 0; i < a.length; i++) {
+            if (a[i] === obj) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+	function aleatorio(inferior,superior){ 
+	    var numPosibilidades = superior - inferior 
+	    var aleat = Math.random() * numPosibilidades 
+	    aleat = Math.round(aleat) 
+	    return parseInt(inferior) + aleat 
+	}
+
+
+	function bubbleSort(a){
+	    var swapped;
+	    do {
+	        swapped = false;
+	        for (var i=0; i < a.length-1; i++) {
+	            if (a[i] > a[i+1]) {
+	                var temp = a[i];
+	                a[i] = a[i+1];
+	                a[i+1] = temp;
+	                swapped = true;
+	            }
+	        }
+	    } while (swapped);
+	}
+
+
+//console.log(output);
+
+  </script>
+</head>
+<body>
+
+
+</div>
+    <div id = "members">
+      <div id="container">
+          <div id = "member" >
+          	<div id = "numbers">
+          </div><br>
+        </div>  
+
+
+    </div>
+
+
+<input class = "button" type="button" value="Loto" onclick="paint();">
+
+<script type="text/javascript">
+function paint(){
+	var output = [];
+		var cont = 0;
+	while(cont < 6){
+
+		var val = aleatorio(1,41);
+		if(!contains(output,val)){
+			output.push(val);
+			cont++;
+		}		
+	}
+ 
+	bubbleSort(output);
+	bubbleSort(output);
+	document.getElementById("numbers").innerHTML = "";
+for(var i = 0; i<6;i++){
+	document.getElementById("numbers").innerHTML += output[i] + " ";
+}
+}
+</script>
+</body>
+</html>
